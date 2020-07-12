@@ -78,3 +78,4 @@ LINEbot、およびそのソースを管理するためのGitHubを学習する�
 7. Pull Requestを送る
 
 test[20200705][tatehisa]
+test[20200712][tatehisa]
