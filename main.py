@@ -7,7 +7,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage,
+    MessageEvent, TextMessage, TextSendMessage
 )
 import os
 
@@ -51,26 +51,25 @@ def callback():
 #def以下の関数を実行します。
 #reply_messageの第一引数のevent.reply_tokenは、イベントの応答に用いるトークンです。 
 #第二引数には、linebot.modelsに定義されている返信用のTextSendMessageオブジェクトを渡しています。
- 
-@handler.add(MessageEvent, message=TextMessage)
-def handle_message(event):
-    send_message = event.message.text
 
-    if send_message == '１':
-        reply_message = 'こんにちは、今日も頑張りましょう！'
-    elif send_message == '２':
-        reply_message = 'こんばんは、お疲れ様です。'
-    elif send_message == '３':
-        reply_message = 'おはようございます、今日も頑張りましょう！'
- 
-    else:
-        reply_message = 'ごめんなさい、３つの挨拶しかできません'
+@handler.add(MessageEvent, message=TextMessage)
+def handle_message(event):
+    send_message = event.message.text
 
-# メッセージを送る
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(reply_message)
-    )
+    if send_message == '１':
+        reply_message = 'こんにちは、今日も頑張りましょう！'
+    elif send_message == '２':
+        reply_message = 'こんばんは、お疲れ様です。'
+    elif send_message == '３':
+        reply_message = 'おはようございます、今日も頑張りましょう！'
+    else:
+        reply_message = 'ごめんなさい、３つの挨拶しかできません'
+    
+    # メッセージを送る
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(reply_message)
+    )
  
 # ポート番号の設定
 if __name__ == "__main__":
