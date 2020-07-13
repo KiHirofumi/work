@@ -7,7 +7,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage
+    MessageEvent, TextMessage, TextSendMessage,
 )
 import os
 
@@ -42,6 +42,10 @@ def callback():
     
     return 'OK'
 
+@app.route("/index", methods=['POST'])
+def index():
+    return 'OK'
+
 ## 2 ##
 ###############################################
 #LINEのメッセージの取得と返信内容の設定(質問羅列形式)
@@ -55,15 +59,14 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     send_message = event.message.text
-
-    if send_message == '１':
-        reply_message = 'こんにちは、今日も頑張りましょう！'
-    elif send_message == '２':
-        reply_message = 'こんばんは、お疲れ様です。!!!'
-    elif send_message == '３':
-        reply_message = 'おはようございます、今日も頑張りましょう！'
+    if send_message is '１':
+        reply_message = 'こんにちは、今日も頑張りましょう！'
+    elif send_message == '２':
+        reply_message = 'こんばんは、お疲れ様です。!!!'
+    elif send_message == '３':
+        reply_message = 'おはようございます、今日も頑張りましょう！'
     else:
-        reply_message = 'ごめんなさい、３つの挨拶しかできません'
+        reply_message = 'ごめんなさい、３つの挨拶しかできません'
     
     # メッセージを送る
     line_bot_api.reply_message(
