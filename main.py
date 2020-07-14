@@ -55,25 +55,22 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     send_message = event.message.text
-
-    if send_message == '１':
-        reply_message = 'こんにちは、今日も頑張りましょう！'
-    elif send_message == '２':
-        reply_message = 'こんばんは、お疲れ様です。!!!'
-    elif send_message == '３':
-        reply_message = 'おはようございます、今日も頑張りましょう！'
+ 
+    if send_message == 'こんにちは':
+        reply_message = 'こんにちは、今日も頑張りましょう！'
+    elif send_message == 'こんばんは':
+        reply_message = 'こんばんは、お疲れ様です。'
+    elif send_message == 'さようなら':
+        reply_message = 'さようなら、また会いましょう。'
+ 
     else:
-        reply_message = 'ごめんなさい、３つの挨拶しかできません'
+        reply_message = 'ごめんなさい、３つの挨拶しかできません'
     
-    # メッセージを送る
+# メッセージを送る
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(reply_message)
     )
-
-
-
-
 
 # ポート番号の設定
 if __name__ == "__main__":
