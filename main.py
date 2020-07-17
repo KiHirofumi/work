@@ -56,6 +56,8 @@ def callback():
 def handle_message(event):
     send_message = event.message.text
  
+    #以下、reply_messageを設定する処理(if文だとか)は、関数使って実装するのがよさそう。
+    #その他設計思想についてはissueに記載します。
     if send_message == 'こんにちは':
         reply_message = 'こんにちは、今日も頑張りましょう！'
     elif send_message == 'こんばんは':
