@@ -71,6 +71,7 @@ user_id_list = []
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     if event.message.text == "質問":
+        print(event)
         user_id_list.append(event.source.userid)
         line_bot_api.reply_message(
             event.reply_token,
