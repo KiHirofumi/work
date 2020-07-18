@@ -67,7 +67,8 @@ def handle_message(event):
     if event.message.text == "質問":
         #処理test
         event.reply_token,
-        TextSendMessage(text="庶務さんに問い合わせてください")
+        #TextSendMessage(text="庶務さんに問い合わせてください")
+        TextSendMessage(text=event.message.text))
 
     else:
         line_bot_api.reply_message(
