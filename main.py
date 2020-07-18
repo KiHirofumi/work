@@ -65,7 +65,7 @@ def handle_message(event):
 ##20200712一旦オウム返しに戻すため、コメントアウト
 #        TextSendMessage(text=event.message.text & "メッセージありがとう")) #ここでオウム返しのメッセージを返します。
     if event.message.text in =="質問":
-        #処理
+        #処理test
         TextSendMessage(text="庶務さんに問い合わせてください")) 
 
     else:
