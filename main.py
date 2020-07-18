@@ -59,12 +59,22 @@ def callback():
  
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=event.message.text)) #ここでオウム返しのメッセージを返します。
+    #line_bot_api.reply_message(
+        #event.reply_token,
+        #TextSendMessage(text=event.message.text)) #ここでオウム返しのメッセージを返します。
 ##20200712一旦オウム返しに戻すため、コメントアウト
 #        TextSendMessage(text=event.message.text & "メッセージありがとう")) #ここでオウム返しのメッセージを返します。
- 
+    if event.message.text in =="質問":
+        #処理
+        TextSendMessage(text="庶務さんに問い合わせてください")) 
+
+    else:
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=event.message.text)) #ここでオウム返しのメッセージを返します。
+
+
+
 # ポート番号の設定
 if __name__ == "__main__":
 #    app.run()
