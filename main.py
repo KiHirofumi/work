@@ -57,8 +57,8 @@ def callback():
 #reply_messageの第一引数のevent.reply_tokenは、イベントの応答に用いるトークンです。 
 #第二引数には、linebot.modelsに定義されている返信用のTextSendMessageオブジェクトを渡しています。
  
-textToiawase = "お問合せ内容を選択してください。\n1.福利厚生について\n2.規則について\n3.手当について\n3-1.家賃補助について\n3-2.資格手当について\n4.手続きについて"
-ToiNo = {
+inquiry_text = "お問合せ内容を選択してください。\n1.福利厚生について\n2.規則について\n3.手当について\n3-1.家賃補助について\n3-2.資格手当について\n4.手続きについて"
+inquiry_list = {
      '1' : '福利厚生',
      '2' : '規則',
      '3' : '手当',
@@ -66,17 +66,26 @@ ToiNo = {
      '3-2' : '資格手当',
      '4' : '手続き',
 }
+user_id_list = []
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     if event.message.text == "質問":
+        user_id_list.append(event.source.userid)
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text=textToiawase))
-    elif event.message.text in ToiNo.keys():
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=ToiNo[event.message.text]))
+            TextSendMessage(text=inquiry_text))
+    elif event.message.text in inquiry_list.keys():
+        if event.source.userid in user_id_list:
+            user_id_list.remove(event.source.userid)
+            line_bot_api.reply_message(
+                event.reply_token,
+                TextSendMessage(text=inquiry_list[event.message.text]))
+        else:
+            user_id_list.append(event.source.userid)
+            line_bot_api.reply_message(
+                event.reply_token,
+                TextSendMessage(text=inquiry_text))
     else:
         line_bot_api.reply_message(
             event.reply_token,
