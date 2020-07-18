@@ -71,7 +71,7 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             #TextSendMessage(text="庶務さんに問い合わせてください"))
-            TextSendMessage(text=listA))
+            TextSendMessage(listA))
         
         
     else:
