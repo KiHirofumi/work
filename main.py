@@ -64,7 +64,7 @@ def handle_message(event):
         #TextSendMessage(text=event.message.text)) #ここでオウム返しのメッセージを返します。
 ##20200712一旦オウム返しに戻すため、コメントアウト
 #        TextSendMessage(text=event.message.text & "メッセージありがとう")) #ここでオウム返しのメッセージを返します。
-    listA = [a,b,c,d,e,]
+    listA = ["a"]
 
     if event.message.text == "質問":
         #処理test
