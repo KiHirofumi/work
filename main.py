@@ -64,11 +64,14 @@ def handle_message(event):
         #TextSendMessage(text=event.message.text)) #ここでオウム返しのメッセージを返します。
 ##20200712一旦オウム返しに戻すため、コメントアウト
 #        TextSendMessage(text=event.message.text & "メッセージありがとう")) #ここでオウム返しのメッセージを返します。
+    listA = [a,b,c,d,e,]
+
     if event.message.text == "質問":
         #処理test
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text="庶務さんに問い合わせてください"))
+            TextSendMessage(text=listA))
         
         
     else:
