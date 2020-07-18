@@ -58,14 +58,25 @@ def callback():
 #第二引数には、linebot.modelsに定義されている返信用のTextSendMessageオブジェクトを渡しています。
  
 textToiawase = "お問合せ内容を選択してください。\n1.福利厚生について\n2.規則について\n3.手当について\n3-1.家賃補助について\n3-2.資格手当について\n4.手続きについて"
+ToiNo = {
+     '1' : '福利厚生',
+     '2' : '規則',
+     '3' : '手当',
+     '3-1' : '家賃補助',
+     '3-2' : '資格手当',
+     '4' : '手続き',
+}
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     if event.message.text == "質問":
-        #処理test
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=textToiawase))
+    elif event.message.text in ToiNo.keys():
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=ToiNo[event.message.text]))
     else:
         line_bot_api.reply_message(
             event.reply_token,
