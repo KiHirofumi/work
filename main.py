@@ -60,21 +60,24 @@ def index():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     send_message = event.message.text
-
-    if send_message == 1:
-        reply_message = '福利厚生について'
-    elif send_message == 2:
-        reply_message = '規則について'
-    elif send_message == 3:
-        reply_message = '手当について'
+ 
+    #以下、reply_messageを設定する処理(if文だとか)は、関数使って実装するのがよさそう。
+    #その他設計思想についてはissueに記載します。
+    if send_message == 'こんにちは':
+        reply_message = 'こんにちは、今日も頑張りましょう！'
+    elif send_message == 'こんばんは':
+        reply_message = 'こんばんは、お疲れ様です。'
+    elif send_message == 'さようなら':
+        reply_message = 'さようなら、また会いましょう。'
+ 
     else:
-        reply_message = 'その他'
-
-#メッセージを送る
-line_bot_api.reply_message(
-    #event.reply_token,
-    TextSendMessage(reply_message)
-    ) #ここでオウム返しのメッセージを返します。
+        reply_message = 'ごめんなさい、３つの挨拶しかできません'
+    
+# メッセージを送る
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(reply_message)
+    )
  
 # ポート番号の設定
 if __name__ == "__main__":
