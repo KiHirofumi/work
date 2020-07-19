@@ -48,7 +48,7 @@ def index():
 
 ## 2 ##
 ###############################################
-#LINEのメッセージの取得と返信内容の設定(オウム返し)
+#LINEのメッセージの取得と返信内容の設定(質問羅列形式)
 ###############################################
  
 #LINEでMessageEvent（普通のメッセージを送信された場合）が起こった場合に、
@@ -56,11 +56,25 @@ def index():
 #reply_messageの第一引数のevent.reply_tokenは、イベントの応答に用いるトークンです。 
 #第二引数には、linebot.modelsに定義されている返信用のTextSendMessageオブジェクトを渡しています。
  
+#メインの処理
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=event.message.text)) #ここでオウム返しのメッセージを返します。
+    send_message = event.message.text
+
+    if send_message == 1:
+        reply_message = '福利厚生について'
+    elif send_message == 2:
+        reply_message = '規則について'
+    elif send_message == 3:
+        reply_message = '手当について'
+    else:
+        reply_message = 'その他'
+
+#メッセージを送る
+line_bot_api.reply_message(
+    event.reply_token,
+    TextSendMessage(reply_message)
+    ) #ここでオウム返しのメッセージを返します。
  
 # ポート番号の設定
 if __name__ == "__main__":
