@@ -72,7 +72,7 @@ def handle_message(event):
 
 #メッセージを送る
 line_bot_api.reply_message(
-    event.reply_token,
+    #event.reply_token,
     TextSendMessage(reply_message)
     ) #ここでオウム返しのメッセージを返します。
  
