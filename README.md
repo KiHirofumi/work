@@ -21,8 +21,6 @@ LINEbot、およびそのソースを管理するためのGitHubを学習する�
 - プルリクエストは完成前でも良い（レビューとして使用）
 - 課題や今後開発したいことはissueに記載する
 
----
-
 # GitHubの使用方
 
 1. https://github.com/KiHirofumi/work にて、右上にあるForkボタンを押下(初回のみ)
@@ -76,3 +74,4 @@ LINEbot、およびそのソースを管理するためのGitHubを学習する�
 ## 完了処理（レビュー）
 
 7. Pull Requestを送る
+
