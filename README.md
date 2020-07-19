@@ -76,3 +76,5 @@ LINEbot、およびそのソースを管理するためのGitHubを学習する�
 ## 完了処理（レビュー）
 
 7. Pull Requestを送る
+
+test 20200718 sakai2
