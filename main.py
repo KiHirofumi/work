@@ -31,7 +31,7 @@ def callback():
 
     # リクエストボディを取得
     body = request.get_data(as_text=True)
-    app.logger.info("Request body: " + body)
+    #app.logger.info("Request body: " + body)
 
     # handle webhook body
     # 署名を検証し、問題なければhandleに定義されている〜〜
@@ -42,9 +42,10 @@ def callback():
     
     return 'OK'
 
-@app.route("/index", methods=['POST'])
-def index():
-    return 'OK'
+##20200712一旦オウム返しに戻すため、コメントアウト
+#@app.route("/index", methods=['POST'])
+#def index():
+#    return 'OK'
 
 ## 2 ##
 ###############################################
@@ -56,12 +57,58 @@ def index():
 #reply_messageの第一引数のevent.reply_tokenは、イベントの応答に用いるトークンです。 
 #第二引数には、linebot.modelsに定義されている返信用のTextSendMessageオブジェクトを渡しています。
  
+inquiry_text = "お問合せ内容を選択してください。\n1.福利厚生について\n2.規則について\n3.手当について\n3-1.家賃補助について\n3-2.資格手当について\n4.手続きについて"
+inquiry_list = {
+     '1' : '福利厚生',
+     '2' : '規則',
+     '3' : '手当',
+     '3-1' : '家賃補助',
+     '3-2' : '資格手当',
+     '4' : '手続き',
+}
+
+# TODO:ユーザIDを取得し、質問羅列→回答の順番にできるようにしたい↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+# user_id_list = []
+
+# @handler.add(MessageEvent, message=TextMessage)
+# def handle_message(event):
+#     if event.message.text == "質問":
+#         print(event)
+#         user_id_list.append(event.source.userId)
+#         line_bot_api.reply_message(
+#             event.reply_token,
+#             TextSendMessage(text=inquiry_text))
+#     elif event.message.text in inquiry_list.keys():
+#         if event.source.userId in user_id_list:
+#             user_id_list.remove(event.source.userId)
+#             line_bot_api.reply_message(
+#                 event.reply_token,
+#                 TextSendMessage(text=inquiry_list[event.message.text]))
+#         else:
+#             user_id_list.append(event.source.userId)
+#             line_bot_api.reply_message(
+#                 event.reply_token,
+#                 TextSendMessage(text=inquiry_text))
+#     else:
+#         line_bot_api.reply_message(
+#             event.reply_token,
+#             TextSendMessage(text=event.message.text)) #ここでオウム返しのメッセージを返します。
+
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=event.message.text)) #ここでオウム返しのメッセージを返します。
- 
+    if event.message.text == "質問":
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=inquiry_text))
+    elif event.message.text in inquiry_list.keys():
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=inquiry_list[event.message.text]))
+    else:
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=event.message.text)) #ここでオウム返しのメッセージを返します。
+
 # ポート番号の設定
 if __name__ == "__main__":
 #    app.run()
