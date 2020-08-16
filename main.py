@@ -67,33 +67,6 @@ inquiry_list = {
      '4' : '手続き',
 }
 
-# TODO:ユーザIDを取得し、質問羅列→回答の順番にできるようにしたい↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
-# user_id_list = []
-
-# @handler.add(MessageEvent, message=TextMessage)
-# def handle_message(event):
-#     if event.message.text == "質問":
-#         print(event)
-#         user_id_list.append(event.source.userId)
-#         line_bot_api.reply_message(
-#             event.reply_token,
-#             TextSendMessage(text=inquiry_text))
-#     elif event.message.text in inquiry_list.keys():
-#         if event.source.userId in user_id_list:
-#             user_id_list.remove(event.source.userId)
-#             line_bot_api.reply_message(
-#                 event.reply_token,
-#                 TextSendMessage(text=inquiry_list[event.message.text]))
-#         else:
-#             user_id_list.append(event.source.userId)
-#             line_bot_api.reply_message(
-#                 event.reply_token,
-#                 TextSendMessage(text=inquiry_text))
-#     else:
-#         line_bot_api.reply_message(
-#             event.reply_token,
-#             TextSendMessage(text=event.message.text)) #ここでオウム返しのメッセージを返します。
-
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     if event.message.text == "質問":
