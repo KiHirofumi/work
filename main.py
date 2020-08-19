@@ -65,6 +65,7 @@ inquiry_list = {
      '3-1' : '家賃補助',
      '3-2' : '資格手当',
      '4' : '手続き',
+     '5' : '〇〇〇〇',
 }
 
 @handler.add(MessageEvent, message=TextMessage)
