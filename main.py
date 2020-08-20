@@ -56,7 +56,7 @@ def callback():
 #def以下の関数を実行します。
 #reply_messageの第一引数のevent.reply_tokenは、イベントの応答に用いるトークンです。 
 #第二引数には、linebot.modelsに定義されている返信用のTextSendMessageオブジェクトを渡しています。
- 
+
 inquiry_text = "お問合せ内容を選択してください。\n1.福利厚生について\n2.規則について\n3.手当について\n3-1.家賃補助について\n3-2.資格手当について\n4.手続きについて"
 inquiry_list = {
      '1' : '福利厚生',
