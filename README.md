@@ -79,3 +79,4 @@ LINEbot、およびそのソースを管理するためのGitHubを学習する�
 
 test[20200705][tatehisa]
 test[20200712][tatehisa]
+test[20200820][tatehisa]
