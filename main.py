@@ -7,7 +7,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage,RichMenuResponse,
+    MessageEvent, TextMessage, TextSendMessage, RichMenuResponse,
 )
 import os
 import json
@@ -25,6 +25,13 @@ handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 # jsonを取得、リッチメニューの設定
 rich_menu_to_create = open('./mainmenu.json', 'r')
 richmenuId = line_bot_api.create_rich_menu(rich_menu=rich_menu_to_create)
+
+# upload an image for rich menu
+path = './imgMain.jpg'
+
+with open(path, 'rb') as f:
+    line_bot_api.set_rich_menu_image(richmenuId, "image/jpeg", f)
+
 line_bot_api.set_default_rich_menu(richmenuId)
 
 ## 1 ##
