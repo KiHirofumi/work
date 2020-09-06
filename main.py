@@ -23,11 +23,11 @@ line_bot_api = LineBotApi(YOUR_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 
 # jsonを取得、リッチメニューの設定
-rich_menu_to_create = open('./mainmenu.json', 'r')
+rich_menu_to_create = open('work/mainmenu.json', 'r')
 richmenuId = line_bot_api.create_rich_menu(rich_menu=rich_menu_to_create)
 
 # upload an image for rich menu
-path = './imgMain.jpg'
+path = 'work/imgMain.jpg'
 
 with open(path, 'rb') as f:
     line_bot_api.set_rich_menu_image(richmenuId, "image/jpeg", f)
