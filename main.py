@@ -7,9 +7,10 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage,
+    MessageEvent, TextMessage, TextSendMessage,RichMenuResponse,
 )
 import os
+import json
 
 app = Flask(__name__)
 
@@ -20,7 +21,11 @@ YOUR_CHANNEL_SECRET = os.environ["YOUR_CHANNEL_SECRET"]
  
 line_bot_api = LineBotApi(YOUR_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(YOUR_CHANNEL_SECRET)
- 
+
+# jsonを取得、リッチメニューの設定
+rich_menu_to_create = open('./mainmenu.json', 'r')
+richmenuId = line_bot_api.create_rich_menu(rich_menu=rich_menu_to_create)
+line_bot_api.set_default_rich_menu(richmenuId)
 
 ## 1 ##
 # Webhookからのリクエストをチェックします。

@@ -1,0 +1,71 @@
+{
+    "size": {
+      "width": 2500,
+      "height": 1686
+    },
+    "selected": true,
+    "name": "メインメニュー",
+    "chatBarText": "お知らせ",
+    "areas": [
+      {
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 875,
+          "height": 892
+        },
+        "action": {
+          "type": "message",
+          "text": "引越しについて"
+        }
+      },
+      {
+        "bounds": {
+          "x": 0,
+          "y": 892,
+          "width": 859,
+          "height": 794
+        },
+        "action": {
+          "type": "message",
+          "text": "出産について"
+        }
+      },
+      {
+        "bounds": {
+          "x": 866,
+          "y": 0,
+          "width": 792,
+          "height": 892
+        },
+        "action": {
+          "type": "message",
+          "text": "結婚について"
+        }
+      },
+      {
+        "bounds": {
+          "x": 851,
+          "y": 893,
+          "width": 808,
+          "height": 793
+        },
+        "action": {
+          "type": "message",
+          "text": "扶養について"
+        }
+      },
+      {
+        "bounds": {
+          "x": 1759,
+          "y": 934,
+          "width": 741,
+          "height": 752
+        },
+        "action": {
+          "type": "message",
+          "text": "メニュー"
+        }
+      }
+    ]
+  }
