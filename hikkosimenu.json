@@ -1,0 +1,41 @@
+{
+    "type": "imagemap",
+    "baseUrl": "work/hikkosi.jpg",
+    "altText": "This is an imagemap",
+    "baseSize": {
+      "width": 1040,
+      "height": 605
+    },
+    "actions": [
+      {
+        "type": "message",
+        "area": {
+          "x": 13,
+          "y": 83,
+          "width": 1007,
+          "height": 166
+        },
+        "text": "引越し・必要な書類"
+      },
+      {
+        "type": "message",
+        "area": {
+          "x": 13,
+          "y": 255,
+          "width": 1008,
+          "height": 160
+        },
+        "text": "引越し・書類の提出期限"
+      },
+      {
+        "type": "message",
+        "area": {
+          "x": 13,
+          "y": 427,
+          "width": 1008,
+          "height": 160
+        },
+        "text": "引越し・その他連絡事項"
+      }
+    ]
+  }
