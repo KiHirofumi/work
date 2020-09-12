@@ -58,7 +58,7 @@ hikkosi_menu = json.load(hikkosi_load)
 
 inquiry_text = "お問合せ内容を選択してください。\n1.福利厚生について\n2.規則について\n3.手当について\n4.手続きについて"
 inquiry_list_main = {
-    '引越しについて' : hikkosi_menu
+    '引越しについて' : hikkosi_menu,
 }
 inquiry_list = {
      #'引越しについて' : hikkosi_menu,
