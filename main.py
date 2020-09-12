@@ -7,7 +7,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage, RichMenuResponse,
+    MessageEvent, TextMessage, TextSendMessage, FlexSendMessage,
 )
 import os
 import json
@@ -48,7 +48,8 @@ def callback():
 #LINEのメッセージの取得と返信内容の設定(オウム返し)
 ###############################################
 
-hikkosi_menu = open('hikkosimenu.json', 'r')
+hikkosi_load = open('hikkosimenu.json', 'r')
+hikkosi_menu = json.load(hikkosi_load)
 
 #LINEでMessageEvent（普通のメッセージを送信された場合）が起こった場合に、
 #def以下の関数を実行します。
@@ -56,8 +57,11 @@ hikkosi_menu = open('hikkosimenu.json', 'r')
 #第二引数には、linebot.modelsに定義されている返信用のTextSendMessageオブジェクトを渡しています。
 
 inquiry_text = "お問合せ内容を選択してください。\n1.福利厚生について\n2.規則について\n3.手当について\n4.手続きについて"
+inquiry_list_main = {
+    '引越しについて' : hikkosi_menu
+}
 inquiry_list = {
-     '引越しについて' : hikkosi_menu,
+     #'引越しについて' : hikkosi_menu,
      '引越し・必要な書類' : '◆必要な書類◆\n①住所変更届\n②住所変更後の住民票の写し\n③賃貸契約書の写し\n\n◆書類記載時の注意事項◆\
             \n*②はコピー、PDFでも可。写真不可。\n*①〜③はメールでの送信可。\n*既婚者の方は、住所変更届にある下記を必ずご記入ください。\
             \n【配偶者を扶養して いる ・ いない】',
@@ -105,6 +109,11 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=inquiry_list[event.message.text]))
+    elif event.message.text in inquiry_list_main.keys():
+        line_bot_api.reply_message(
+            event.reply_token,
+            FlexSendMessage.new_from_json_dict(inquiry_list_main[event.message.text])
+        )
     else:
         line_bot_api.reply_message(
             event.reply_token,
