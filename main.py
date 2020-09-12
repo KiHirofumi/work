@@ -112,7 +112,7 @@ def handle_message(event):
     elif event.message.text in inquiry_list_main.keys():
         line_bot_api.reply_message(
             event.reply_token,
-            FlexSendMessage.new_from_json_dict(inquiry_list_main[event.message.text])
+            FlexSendMessage.new_from_json_dict(inquiry_list_main[event.message.text]['action'])
         )
     else:
         line_bot_api.reply_message(
