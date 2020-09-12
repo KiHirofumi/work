@@ -1,4 +1,6 @@
 {
+"messages" : [
+{
     "type": "imagemap",
     "baseUrl": "hikkosi.jpg",
     "altText": "This is an imagemap",
@@ -39,3 +41,5 @@
       }
     ]
   }
+]
+}
