@@ -48,7 +48,7 @@ def callback():
 #LINEのメッセージの取得と返信内容の設定(オウム返し)
 ###############################################
 
-hikkosi_load = open('hikkosimenu.json', 'r')
+hikkosi_load = open('work/hikkosimenu.json', 'r')
 hikkosi_menu = json.load(hikkosi_load)
 
 #LINEでMessageEvent（普通のメッセージを送信された場合）が起こった場合に、
