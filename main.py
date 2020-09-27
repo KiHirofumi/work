@@ -100,6 +100,7 @@ inquiry_list = {
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+
     if event.message.text in inquiry_list.keys():
         line_bot_api.reply_message(
             event.reply_token,
@@ -108,6 +109,7 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=event.message.text)) #ここでオウム返しのメッセージを返します。
+
 
 # ポート番号の設定
 if __name__ == "__main__":
