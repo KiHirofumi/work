@@ -2,7 +2,7 @@
 "messages" : [
 {
     "type": "imagemap",
-    "baseUrl": "work/hikkosi.jpg",
+    "baseUrl": "hikkosi.jpg",
     "altText": "This is an imagemap",
     "baseSize": {
       "width": 1040,
