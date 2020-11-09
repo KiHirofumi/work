@@ -50,7 +50,7 @@ def callback():
 
 #jsonファイル名とパス
 #jsonFileName = r"C:\Users\Manawave\IC\work\hikkosimenu.json"
-jsonFileName = r"work\hikkosimenu.json"
+jsonFileName = r"hikkosimenu.json"
 #ファイルオープン
 hikkosi_load = open(jsonFileName, mode='r', encoding="utf-8_sig")
 #jsonファイルを辞書形式で読み込み
