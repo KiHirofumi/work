@@ -48,8 +48,14 @@ def callback():
 #LINEのメッセージの取得と返信内容の設定(オウム返し)
 ###############################################
 
-hikkosi_load = open('hikkosimenu.json', 'r')
+#jsonファイル名とパス
+jsonFileName = r"C:\Users\Manawave\Pictures\ICdog\hikkosi.jpg"
+#ファイルオープン
+hikkosi_load = open(jsonFileName, mode='r', encoding="utf-8_sig")
+#jsonファイルを辞書形式で読み込み
 hikkosi_menu = json.load(hikkosi_load)
+#ファイルクローズ
+hikkosi_load.close()
 
 #LINEでMessageEvent（普通のメッセージを送信された場合）が起こった場合に、
 #def以下の関数を実行します。
