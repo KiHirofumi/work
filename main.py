@@ -54,7 +54,7 @@ jsonFileName = r"hikkosimenu.json"
 #ファイルオープン
 hikkosi_load = open(jsonFileName, mode='r', encoding="utf-8_sig")
 #jsonファイルを辞書形式で読み込み
-hikkosi_menu = json.load(hikkosi_load)
+hikkosi_menu = json.loads(hikkosi_load)
 #ファイルクローズ
 hikkosi_load.close()
 
@@ -117,11 +117,16 @@ def handle_message(event):
             event.reply_token,
             TextSendMessage(text=inquiry_list[event.message.text]))
     elif event.message.text in inquiry_list_main.keys():
-        result_list = inquiry_list_main[event.message.text]
+        #result_list = inquiry_list_main[event.message.text]
         line_bot_api.reply_message(
             event.reply_token,
             #FlexSendMessage.new_from_json_dict(inquiry_list_main[event.message.text]['messages'])
-            FlexSendMessage.new_from_json_dict(result_list)
+            #FlexSendMessage.new_from_json_dict(result_list)
+            FlexSendMessage(
+                alt_text = 'This is an imagemap',
+                # contentsパラメータにdict型の値を渡す
+                contents = hikkosi_menu
+            )
         )
     else:
         line_bot_api.reply_message(

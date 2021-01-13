@@ -1,6 +1,4 @@
 {
-"messages" : [
-{
     "type": "imagemap",
     "baseUrl": "hikkosi.jpg",
     "altText": "This is an imagemap",
@@ -40,6 +38,4 @@
         "text": "引越し・その他連絡事項"
       }
     ]
-  }
-]
 }
