@@ -123,7 +123,7 @@ def handle_message(event):
             #FlexSendMessage.new_from_json_dict(inquiry_list_main[event.message.text]['messages'])
             #FlexSendMessage.new_from_json_dict(result_list)
             ImagemapSendMessage(
-                base_url = 'https://github.com/Namiwave/work/blob/UI%E5%90%91%E4%B8%8A/',
+                base_url = 'https://github.com/Namiwave/work/tree/UI%E5%90%91%E4%B8%8A/hikkosi/menu/',
                 alt_text = 'This is an imagemap',
                 base_size = BaseSize(height = 605, width = 1040),
                 # actionsパラメータにdict型の値を渡す(一時保留)
