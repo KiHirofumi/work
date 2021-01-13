@@ -54,7 +54,7 @@ jsonFileName = r"hikkosimenu.json"
 #ファイルオープン
 hikkosi_load = open(jsonFileName, mode='r', encoding="utf-8_sig")
 #jsonファイルを辞書形式で読み込み
-hikkosi_menu = json.loads(hikkosi_load)
+hikkosi_menu = json.load(hikkosi_load)
 #ファイルクローズ
 hikkosi_load.close()
 
