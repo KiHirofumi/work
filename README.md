@@ -1,8 +1,21 @@
+## 目次
+
+- [workリポジトリについて](#workリポジトリについて)
+  - [背景](#背景)
+  - [line bot](#line-bot)
+  - [暫定目標](#暫定目標)
+  - [ルール](#ルール)
+  - [GitHubの使用方](#githubの使用方)
+    - [(Forkしていない初回のみ)](#forkしていない初回のみ)
+    - [(Fork済み)](#fork済み)
+  - [開発](#開発)
+  - [完了処理（レビュー）](#完了処理レビュー)
+  
 # workリポジトリについて
 
 ## 背景
 
-このリポジトリは
+このリポジトリはチームICDogによる
 LINEbot、およびそのソースを管理するためのGitHubを学習するためのリポジトリです。
 
 ## line bot
@@ -23,9 +36,11 @@ LINEbot、およびそのソースを管理するためのGitHubを学習する�
 
 ---
 
-# GitHubの使用方
+## GitHubの使用方
 
-1. https://github.com/KiHirofumi/work にて、右上にあるForkボタンを押下(初回のみ)
+### (Forkしていない初回のみ)
+
+1. <https://github.com/KiHirofumi/work> にて、右上にあるForkボタンを押下(初回のみ)
 
    - 自分のGitHub（Gitのネットワーク上、リモートリポジトリ）に取得
 
@@ -44,14 +59,22 @@ LINEbot、およびそのソースを管理するためのGitHubを学習する�
 
       とか
 
-      > git clone https://github.com/KiHirofumi/work.git
+      > git clone <https://github.com/KiHirofumi/work.git>
 
    5. cloneしてきたディレクトリに移動
 
       > cd work
 
+### (Fork済み)
+
+1. Fork元（origin）から最新版を取得する
+     > git fetch origin
+
+2. 最新版と比較しマージする
+     > git merge origin
+
 3. branch
-   - なんの開発するか明確にする
+   - 何の開発するか明確にする
      - 「main関数に呼び出し元を作成」とか
     1. 現在のbranchを確認(最初はmasterになっている)
         >git branch
@@ -63,12 +86,15 @@ LINEbot、およびそのソースを管理するためのGitHubを学習する�
 ## 開発
 
 4. コードを追加
+
      - 開発をローカルの環境で実施
 
 5. 変更をコミット
+
      - 開発をGit上に保存
 
 6. リモートブランチ作成
+
      - 自分のGitHubに同名ブランチを作成
      - pushでGitHubに保存
         > git push origin ブランチ名
@@ -77,6 +103,10 @@ LINEbot、およびそのソースを管理するためのGitHubを学習する�
 
 7. Pull Requestを送る
 
-test[20200705][tatehisa]
-test[20200712][tatehisa]
-test[20200820][tatehisa]
+   - Issueに紐づくPull Requestの場合
+     - Pull Requestのコメント欄にIssue番号を記載することで、Issueと紐付きます。
+     > ○○について改良しました。
+     > レビューよろしく。 #1
+
+   - Issueとは関係なくPull Requestを送る場合
+     - 何のための開発であるか、コメント欄に記載してください。
