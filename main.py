@@ -11,6 +11,7 @@ from linebot.models import (
 )
 import os
 import json
+import flexCreate as flc
 
 app = Flask(__name__)
 
@@ -122,33 +123,7 @@ def handle_message(event):
             event.reply_token,
             #FlexSendMessage.new_from_json_dict(inquiry_list_main[event.message.text]['messages'])
             #FlexSendMessage.new_from_json_dict(result_list)
-            ImagemapSendMessage(
-                base_url = 'https://github.com/Namiwave/work/tree/UI%E5%90%91%E4%B8%8A/hikkosi/menu',
-                alt_text = 'This is an imagemap',
-                base_size = BaseSize(height = 605, width = 1040),
-                # actionsパラメータにdict型の値を渡す(一時保留)
-                #actions = hikkosi_menu
-                actions = [
-                    MessageImagemapAction(
-                        text = '引越し・必要な書類',
-                        area = ImagemapArea(
-                            x = 13, y = 83, width = 1007, height = 166
-                        )
-                    ),
-                    MessageImagemapAction(
-                        text = '引越し・書類の提出期限',
-                        area = ImagemapArea(
-                            x = 13, y = 255, width = 1007, height = 166
-                        )
-                    ),
-                    MessageImagemapAction(
-                        text = '引越し・その他連絡事項',
-                        area = ImagemapArea(
-                            x = 13, y = 427, width = 1007, height = 166
-                        )
-                    )
-                ]
-            )
+            messages = flc.make_flex()
         )
     else:
         line_bot_api.reply_message(

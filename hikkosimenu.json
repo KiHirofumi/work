@@ -1,41 +1,79 @@
 {
-  "type": "imagemap",
-  "baseUrl": "hikkosi.jpg",
-  "altText": "This is an imagemap",
-  "baseSize": {
-    "width": 1040,
-    "height": 605
+  "type": "bubble",
+  "direction": "ltr",
+  "header": {
+    "type": "box",
+    "layout": "vertical",
+    "position": "default",
+    "contents": [
+      {
+        "type": "text",
+        "text": "引越しについて",
+        "weight": "bold",
+        "size": "xl",
+        "align": "center",
+        "contents": []
+      }
+    ]
   },
-  "actions": [
-    {
-      "type": "message",
-      "area": {
-        "x": 13,
-        "y": 83,
-        "width": 1007,
-        "height": 166
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "position": "default",
+    "contents": [
+      {
+        "type": "text",
+        "text": "お問い合わせ内容を選択してください",
+        "size": "sm",
+        "align": "center",
+        "wrap": true,
+        "contents": []
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "md",
+    "position": "default",
+    "contents": [
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "必要な書類・注意事項",
+          "text": "引越しA"
+        },
+        "height": "sm"
       },
-      "text": "引越し・必要な書類"
-    },
-    {
-      "type": "message",
-      "area": {
-        "x": 13,
-        "y": 255,
-        "width": 1007,
-        "height": 166
+      {
+        "type": "separator",
+        "margin": "sm",
+        "color": "#656060FF"
       },
-      "text": "引越し・書類の提出期限"
-    },
-    {
-      "type": "message",
-      "area": {
-        "x": 13,
-        "y": 427,
-        "width": 1007,
-        "height": 166
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "書類の提出期限",
+          "text": "引越しB"
+        },
+        "height": "sm"
       },
-      "text": "引越し・その他連絡事項"
-    }
-  ]
+      {
+        "type": "separator",
+        "margin": "sm",
+        "color": "#656060FF"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "その他連絡事項",
+          "text": "引越しC"
+        },
+        "height": "sm"
+      }
+    ]
+  }
 }
