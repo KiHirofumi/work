@@ -6,10 +6,17 @@
     "contents": [
       {
         "type": "text",
-        "text": "引越し",
+        "text": "引越しについて",
         "weight": "bold",
         "size": "xl",
         "align": "center"
+      },
+      {
+        "type": "text",
+        "text": "お問い合わせ内容を選択してください",
+        "size": "xs",
+        "align": "center",
+        "margin": "md"
       }
     ]
   },
@@ -25,7 +32,7 @@
         "action": {
           "type": "message",
           "label": "必要な書類",
-          "text": "引越し1"
+          "text": "引越し・必要な書類"
         }
       },
       {
@@ -39,7 +46,7 @@
         "action": {
           "type": "message",
           "label": "書類の提出期限",
-          "text": "引越し2"
+          "text": "引越し・書類の提出期限"
         }
       },
       {
@@ -51,7 +58,7 @@
         "action": {
           "type": "message",
           "label": "その他連絡事項",
-          "text": "引越し3"
+          "text": "引越し・その他連絡事項"
         }
       },
       {
