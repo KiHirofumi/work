@@ -49,15 +49,17 @@ def callback():
 #LINEのメッセージの取得と返信内容の設定(オウム返し)
 ###############################################
 
+####いったんコメント 0427
 #jsonファイル名とパス
 #jsonFileName = r"C:\Users\Manawave\IC\work\hikkosimenu.json"
-jsonFileName = r"hikkosimenu.json"
+#jsonFileName = r"hikkosimenu.json"
 #ファイルオープン
-hikkosi_load = open(jsonFileName, mode='r', encoding="utf-8_sig")
+#hikkosi_load = open(jsonFileName, mode='r', encoding="utf-8_sig")
 #jsonファイルを辞書形式で読み込み
-hikkosi_menu = json.load(hikkosi_load)
+#hikkosi_menu = json.load(hikkosi_load)
 #ファイルクローズ
-hikkosi_load.close()
+#hikkosi_load.close()
+#### 0427
 
 #LINEでMessageEvent（普通のメッセージを送信された場合）が起こった場合に、
 #def以下の関数を実行します。
@@ -66,7 +68,7 @@ hikkosi_load.close()
 
 inquiry_text = "お問合せ内容を選択してください。\n1.福利厚生について\n2.規則について\n3.手当について\n4.手続きについて"
 inquiry_list_main = {
-    '引越しについて' : hikkosi_menu,
+    '引越しについて' : '引越し'
 }
 inquiry_list = {
      #'引越しについて' : hikkosi_menu,
