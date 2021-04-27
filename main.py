@@ -123,7 +123,11 @@ def handle_message(event):
             event.reply_token,
             #FlexSendMessage.new_from_json_dict(inquiry_list_main[event.message.text]['messages'])
             #FlexSendMessage.new_from_json_dict(result_list)
-            messages = flc.make_flex()
+            #messages = flc.make_flex()
+            FlexSendMessage(
+                alt_text = 'alt_text',
+                contents = flc.make_flex()
+            )
         )
     else:
         line_bot_api.reply_message(
