@@ -70,6 +70,9 @@ inquiry_text = "お問合せ内容を選択してください。\n1.福利厚生
 inquiry_list_main = {
     '引越しについて' : '引越し'
 }
+inquiry_list_sub = {
+    '引越し・必要な書類' : '引越し'
+}
 inquiry_list = {
      #'引越しについて' : hikkosi_menu,
      '引越し・必要な書類' : '◆必要な書類◆\n①住所変更届\n②住所変更後の住民票の写し\n③賃貸契約書の写し\n\n◆書類記載時の注意事項◆\
@@ -129,6 +132,18 @@ def handle_message(event):
             FlexSendMessage(
                 alt_text = 'alt_text',
                 contents = flc.make_flex()
+            )
+        )
+    elif event.message.text in inquiry_list_sub.keys():
+        #result_list = inquiry_list_main[event.message.text]
+        line_bot_api.reply_message(
+            event.reply_token,
+            #FlexSendMessage.new_from_json_dict(inquiry_list_main[event.message.text]['messages'])
+            #FlexSendMessage.new_from_json_dict(result_list)
+            #messages = flc.make_flex()
+            FlexSendMessage(
+                alt_text = 'alt_text',
+                contents = flc.make_flex_sub()
             )
         )
     else:

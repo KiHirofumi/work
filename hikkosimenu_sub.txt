@@ -1,0 +1,98 @@
+{
+  "type": "bubble",
+  "size": "giga",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "【引越しに必要な書類】",
+        "weight": "bold",
+        "size": "xl",
+        "align": "center"
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "◆必要な書類◆",
+            "color": "#ff4500",
+            "decoration": "underline",
+            "size": "lg",
+            "weight": "bold"
+          },
+          {
+            "type": "text",
+            "text": "　①住所変更届",
+            "margin": "md"
+          },
+          {
+            "type": "text",
+            "text": "　②住所変更後の住民票の写し",
+            "margin": "xs"
+          },
+          {
+            "type": "text",
+            "text": "　③賃貸契約書の写し",
+            "margin": "xs"
+          },
+          {
+            "type": "spacer"
+          }
+        ]
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "◆書類記載時の注意事項◆",
+            "color": "#ff4500",
+            "decoration": "underline",
+            "size": "lg",
+            "weight": "bold"
+          },
+          {
+            "type": "text",
+            "text": "　＊②はコピー、PDFでも可。写真不可。",
+            "margin": "md"
+          },
+          {
+            "type": "text",
+            "text": "　＊①～③はメールでの送信可。",
+            "margin": "xs"
+          },
+          {
+            "type": "text",
+            "text": "　＊既婚者の方は、住所変更届にある下記を必ずご記入ください。",
+            "wrap": true,
+            "margin": "xs"
+          },
+          {
+            "type": "text",
+            "text": "　【配偶者を扶養して　いる・いない】",
+            "margin": "lg"
+          },
+          {
+            "type": "spacer"
+          }
+        ]
+      },
+      {
+        "type": "spacer"
+      }
+    ],
+    "flex": 0
+  }
+}
