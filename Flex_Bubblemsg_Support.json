@@ -1,0 +1,80 @@
+{
+  "type": "bubble",
+  "direction": "ltr",
+  "header": {
+    "type": "box",
+    "layout": "vertical",
+    "position": "relative",
+    "contents": [
+      {
+        "type": "text",
+        "text": "扶養手続きについて",
+        "weight": "bold",
+        "size": "xl",
+        "align": "center",
+        "contents": [],
+        "wrap": true
+      }
+    ]
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "position": "relative",
+    "contents": [
+      {
+        "type": "text",
+        "text": "お問い合わせ内容を選択してください",
+        "size": "sm",
+        "align": "center",
+        "wrap": true,
+        "contents": []
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "md",
+    "position": "relative",
+    "contents": [
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "必要な書類・注意事項",
+          "text": "扶養・必要な書類"
+        },
+        "height": "sm"
+      },
+      {
+        "type": "separator",
+        "margin": "sm",
+        "color": "#656060FF"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "書類の提出期限",
+          "text": "扶養・その他連絡事項"
+        },
+        "height": "sm"
+      },
+      {
+        "type": "separator",
+        "margin": "sm",
+        "color": "#656060FF"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "その他連絡事項",
+          "text": "扶養・必要な書類、注意事項（外す）"
+        },
+        "height": "sm"
+      }
+    ]
+  }
+}

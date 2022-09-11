@@ -1,0 +1,110 @@
+{
+  "type": "bubble",
+  "size": "giga",
+  "header": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "【引越しに必要な書類】",
+        "margin": "none",
+        "size": "xxl",
+        "weight": "bold",
+        "decoration": "none",
+        "position": "relative",
+        "align": "center",
+        "gravity": "top",
+        "wrap": false
+      }
+    ]
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "◆必要な書類◆",
+        "size": "lg",
+        "color": "#ff4500",
+        "weight": "bold",
+        "decoration": "underline",
+        "margin": "none",
+        "position": "relative",
+        "align": "start",
+        "offsetTop": "sm",
+        "offsetStart": "none"
+      },
+      {
+        "type": "text",
+        "text": "①住所変更届",
+        "wrap": true,
+        "margin": "md",
+        "offsetStart": "md",
+        "offsetTop": "none"
+      },
+      {
+        "type": "text",
+        "text": "②住所変更後の住民票の写し",
+        "wrap": true,
+        "margin": "xs",
+        "offsetStart": "md",
+        "offsetTop": "none"
+      },
+      {
+        "type": "text",
+        "text": "③賃貸契約書の写し",
+        "wrap": true,
+        "margin": "xs",
+        "offsetStart": "md",
+        "offsetTop": "none"
+      },
+      {
+        "type": "text",
+        "text": "◆書類記載時の注意事項◆",
+        "size": "lg",
+        "color": "#ff4500",
+        "weight": "bold",
+        "decoration": "underline",
+        "margin": "none",
+        "position": "relative",
+        "align": "start",
+        "offsetTop": "sm",
+        "offsetStart": "none"
+      },
+      {
+        "type": "text",
+        "text": "*②はコピー、PDFでも可。写真不可。",
+        "wrap": true,
+        "margin": "md",
+        "offsetStart": "md",
+        "offsetTop": "none"
+      },
+      {
+        "type": "text",
+        "text": "*①～③はメールでの送信可。",
+        "wrap": true,
+        "margin": "xs",
+        "offsetStart": "md",
+        "offsetTop": "none"
+      },
+      {
+        "type": "text",
+        "text": "*既婚者の方は、住所変更届にある下記を必ずご記入ください。",
+        "wrap": true,
+        "margin": "xs",
+        "offsetStart": "md",
+        "offsetTop": "none"
+      },
+      {
+        "type": "text",
+        "text": "【配偶者を扶養している・いない】",
+        "margin": "xs",
+        "align": "center",
+        "offsetTop": "none",
+        "offsetStart": "md"
+      }
+    ]
+  }
+}

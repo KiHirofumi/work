@@ -1,0 +1,104 @@
+{
+  "type": "bubble",
+  "direction": "ltr",
+  "header": {
+    "type": "box",
+    "layout": "vertical",
+    "position": "relative",
+    "contents": [
+      {
+        "type": "text",
+        "text": "メニュー",
+        "weight": "bold",
+        "size": "xl",
+        "align": "center",
+        "contents": [],
+        "wrap": true
+      }
+    ]
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "position": "relative",
+    "contents": [
+      {
+        "type": "text",
+        "text": "お問い合わせ内容を選択してください",
+        "size": "sm",
+        "align": "center",
+        "wrap": true,
+        "contents": []
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "md",
+    "position": "relative",
+    "contents": [
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "引っ越し",
+          "text": "引っ越し手続き"
+        },
+        "height": "sm"
+      },
+      {
+        "type": "separator",
+        "margin": "sm",
+        "color": "#656060FF"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "結婚手続き・氏名変更なし",
+          "text": "結婚氏名変更なし"
+        },
+        "height": "sm"
+      },
+      {
+        "type": "separator",
+        "margin": "sm",
+        "color": "#656060FF"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "結婚手続き・氏名変更あり",
+          "text": "結婚氏名変更あり"
+        },
+        "height": "sm"
+      },
+      {
+        "type": "separator"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "出産",
+          "text": "出産手続き"
+        },
+        "height": "sm"
+      },
+      {
+        "type": "separator"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "扶養",
+          "text": "扶養手続き"
+        },
+        "height": "sm"
+      }
+    ]
+  }
+}

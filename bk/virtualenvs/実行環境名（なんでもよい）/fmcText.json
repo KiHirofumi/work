@@ -1,0 +1,22 @@
+{
+  "type": "bubble",
+  "size": "giga",
+  "header": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "Åyà¯âzÇµÇ…ïKóvÇ»èëóﬁÅz",
+        "margin": "none",
+        "size": "xxl",
+        "weight": "bold",
+        "decoration": "none",
+        "position": "relative",
+        "align": "center",
+        "gravity": "top",
+        "wrap": "false"
+      }
+    ]
+  }
+}
